@@ -23,17 +23,18 @@ function displayProducts() {
    console.log(inventory);
 
    var table = new Table({
-    head: ["products", "price", "name", "inventory"]})
+    head: ["productsId", "price", "name", "inventory"]})
     return(displayProducts)
 })}
 
 for (var i = 0; i < results.length; i++) 
 table.push([
-    results[i].products,
+    results[i].productsId,
     results[i].price,
     results[i].name,
     results[i].inventory,
   ]);
 
+//show product table adding to each colum when edited by manager 
 
 

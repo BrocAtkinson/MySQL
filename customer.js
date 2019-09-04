@@ -24,3 +24,11 @@ var display = function() {
         head: ["products", "name", "price" , "inventory"]
       }
       )})}
+
+
+
+      // connect to sql 
+      // display products
+      // if statement to select product 
+      // then promt to product selected === product available 
+      // if true the subtract product from inventory 
