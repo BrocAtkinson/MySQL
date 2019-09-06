@@ -1,0 +1,27 @@
+{
+  "name": "MySQL",
+  "version": "1.0.0",
+  "description": "project using myysql",
+  "main": "customer.js",
+  "dependencies": {
+    "cli2": "^1.0.2",
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1",
+    "prompts": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrocAtkinson/MySQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrocAtkinson/MySQL/issues"
+  },
+  "homepage": "https://github.com/BrocAtkinson/MySQL#readme"
+}

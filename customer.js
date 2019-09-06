@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const mysql = require("mysql");
 const inquirer = require("inquirer");
@@ -12,23 +12,40 @@ const connection = mysql.createConnection({
 
   // Your password
   password: "Aggies10!",
-  database: "bamazon_DB"
+  database: "bamazonDB"
 });
 
 connection.connect();
 
 var display = function() {
-    connection.query("SELECT * FROM products", function(err, res) {
-      if (err) throw err;
-      var table = new Table({
-        head: ["products", "name", "price" , "inventory"]
-      }
-      )})}
+  connection.query("SELECT * FROM products", function(err, res) {
+    if (err) throw err;
+    console.table(res);
+     productSelection();
+  });
+};
+
+var productSelection = function() {
+  console.log("productSelection")
+  selectQuanity()
+};
+var selectQuanity = function() {
+  console.log("selectQuanity")
+  buyMore()
+};
+var buyMore = function() {
+  console.log("buyMore")
+};
+display();
 
 
+//inquirer
+//please select id number
+//please select quanity of product
+//would you like to purchase any other products?
 
-      // connect to sql 
-      // display products
-      // if statement to select product 
-      // then promt to product selected === product available 
-      // if true the subtract product from inventory 
+// connect to sql
+// display products
+// if statement to select product
+// then promt to product selected === product available
+// if true the subtract product from inventory
