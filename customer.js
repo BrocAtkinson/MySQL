@@ -23,7 +23,7 @@ let display = function() {
     console.table(res);
      productSelection();
   });
-};
+};display();
  let productSelection = function() {
   inquirer
   .prompt([
@@ -33,7 +33,6 @@ let display = function() {
       message: 'What Macbook would you like?',
       default: 'Mac Book Pro!',
     },
-
   ]).then(function(answer){
     selectQuanity()
   })}
@@ -50,7 +49,7 @@ let selectQuanity = function() {
       message: 'How many would you like?',
     },
 
-  ]).then(function(answer){
+  ]).then(function(selectQuanity){
     buyMore()
   })}
   //console.log("selectQuanity")
@@ -66,7 +65,17 @@ let buyMore = function() {
     },
   ]).then(function(answer){
     buyMore()
-  })}
+    switch(buyMore) {
+      case x:
+        yes = productSelection;
+        break;
+      case y:
+        no = err;
+        break;
+  }}
+  )
+};
+  connection.end();
 
 // display();
 // const prompts = require('prompts');
