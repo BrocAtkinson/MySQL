@@ -17,27 +17,86 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-var display = function() {
+let display = function() {
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
     console.table(res);
      productSelection();
   });
 };
+ let productSelection = function() {
+  inquirer
+  .prompt([
+    {
+      name: 'macbook',
+      type: 'input',
+      message: 'What Macbook would you like?',
+      default: 'Mac Book Pro!',
+    },
 
-var productSelection = function() {
+  ]).then(function(answer){
+    selectQuanity()
+  })}
+
+   // console.info('Answer:', answers.productSelection);
   console.log("productSelection")
-  selectQuanity()
-};
-var selectQuanity = function() {
-  console.log("selectQuanity")
-  buyMore()
-};
-var buyMore = function() {
-  console.log("buyMore")
-};
-display();
 
+let selectQuanity = function() {
+  inquirer
+  .prompt([
+    {
+      name: 'macbook',
+      type: 'input',
+      message: 'How many would you like?',
+    },
+
+  ]).then(function(answer){
+    buyMore()
+  })}
+  //console.log("selectQuanity")
+  
+
+let buyMore = function() {
+  inquirer
+  .prompt([
+    {
+      name: 'macbook',
+      type: 'input',
+      message: 'Would you like another model?',
+    },
+  ]).then(function(answer){
+    buyMore()
+  })}
+
+// display();
+// const prompts = require('prompts');
+ 
+
+// function questions  {
+//   {
+//     inquirer.prompt ({
+//     type: 'input',
+//     name: 'product type',
+//     message: 'What Mac would you like?'
+//   },
+//   {
+//     type: 'input',
+//     name: 'quanity',
+//     message: 'How many would you like?'
+//   },
+//   {
+//     type: 'input',
+//     name: 'about',
+//     message: 'Would you like to choose another Mac ?',
+//     initial: 'You can never have to many?'
+//   }
+
+ 
+// (async () => {
+//   const response = await prompts(questions);
+ 
+//   // => response => { username, age, about }
+// })();
 
 //inquirer
 //please select id number
@@ -48,4 +107,4 @@ display();
 // display products
 // if statement to select product
 // then promt to product selected === product available
-// if true the subtract product from inventory
+// if true the subtract product from 
